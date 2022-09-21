@@ -1,0 +1,22 @@
+create table dlithe.dbo.SS_customers
+(
+id int,
+name varchar(100),
+mob varchar(200),
+country varchar(200)
+);
+create table SS_orders1
+(
+ord_id int,
+id int,
+ord_date date
+);
+insert into SS_customers values(1,'SUSH','123123123','INDIA'),(2,'THARUN','234234234','US'),(3,'YASH','345345345','EUROPE'),(4,'JOHN','456456456','RUSSIA');
+INSERT INTO SS_orders1 values(300,2,'02-09-2022'),(301,1,'03-09-2022'),(302,3,'04-09-2022'),(303,1,'05-09-2022');
+select * from SS_customers;
+select * from SS_orders1;
+select * from SS_customers as cus full join  SS_orders1 as ord on cus.id=ord.id;
+select * from SS_customers as cus inner join  SS_orders1 as ord on cus.id=ord.id;
+select * from SS_customers as cus left join  SS_orders1 as ord on cus.id=ord.id;
+select * from SS_customers as cus right join  SS_orders1 as ord on cus.id=ord.id;
+select * from SS_customers as cus cross join  SS_orders1 as ord;
