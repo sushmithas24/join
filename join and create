@@ -20,3 +20,21 @@ select * from SS_customers as cus inner join  SS_orders1 as ord on cus.id=ord.id
 select * from SS_customers as cus left join  SS_orders1 as ord on cus.id=ord.id;
 select * from SS_customers as cus right join  SS_orders1 as ord on cus.id=ord.id;
 select * from SS_customers as cus cross join  SS_orders1 as ord;
+
+--3rd table
+create table dlithe.dbo.SS_department1
+(
+department_id int PRIMARY KEY,
+department_name varchar(100) NOT NULL UNIQUE,
+department_head varchar(100)
+);
+insert into SS_department1 values(1,'test','manu');
+insert into SS_department1 values(2,'db','pooja');
+insert into SS_department1 values(3,'.net','ravindra');
+select * from SS_department1;
+
+
+--USing 3 tables
+select * from SS_employe as cus inner join  SS_address1 as ord 
+on cus.zipcode=ord.zipcode inner join SS_department1 as dep
+on dep.department_id=cus.departid;
